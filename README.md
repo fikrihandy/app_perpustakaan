@@ -7,7 +7,7 @@ Aplikasi untuk mencatat peminjaman buku perpustakaan.
 Untuk menjalankan aplikasi, install [Python 3](https://www.python.org/downloads/) (tested v3.10.6)
 dan [Streamlit](https://streamlit.io/#install) (tested v1.12.2).
 
-Jalankan melalui terminal `$ cd app_perpustakaan`, kemudian `$ streamlit run 🏠_Home.py`.
+Jalankan melalui terminal `$ cd app_perpustakaan`, kemudian `$ streamlit run Home.py`.
 
 Telah di-test pada Sistem Operasi dan Browser:
 
