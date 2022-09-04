@@ -1,6 +1,6 @@
 import re
 import streamlit as st
-from pages.const.fun import open_buku, save_buku, open_kategori, open_peminjaman
+from pages.const.fun import open_buku, save_buku, open_kategori, open_peminjaman, buku_stock
 
 tab1, tab2, tab3 = st.tabs(["Daftar Buku", "Tambah Buku", "Hapus Buku"])
 
@@ -15,6 +15,7 @@ with tab1:
     penulis = []
     penerbit = []
     kuantitas = []
+    stock = []
     kategori = []
 
     for i in data_buku:
@@ -23,6 +24,7 @@ with tab1:
         penulis.append(data_buku[i]["penulis"])
         penerbit.append(data_buku[i]["penerbit"])
         kuantitas.append(data_buku[i]["kuantitas"])
+        stock.append(buku_stock(i))
         kategori.append(data_buku[i]["kategori"])
 
     st.dataframe(pd.DataFrame({
@@ -31,6 +33,7 @@ with tab1:
         'Penulis': penulis,
         'Penerbit': penerbit,
         'Kuantitas': kuantitas,
+        'Stock': stock,
         'Kategori': kategori
     }))
 

@@ -90,3 +90,15 @@ def open_kategori():  # kategori
 def save_kategori(kategori):
     with open(f'{path}/data_kategori.json', "w") as outfile:
         json.dump(kategori, outfile)
+
+
+def buku_stock(id_buku):
+    stock = 0
+    data_peminjaman = open_peminjaman()
+    data_buku = open_buku()
+    for i in data_peminjaman:
+        for j in data_peminjaman[i]['id']:
+            for key in j:
+                if id_buku == key:
+                    stock += 1
+    return data_buku[id_buku]["kuantitas"] - stock

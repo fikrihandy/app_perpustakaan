@@ -1,6 +1,6 @@
 import streamlit as st
 
-from pages.const.fun import open_buku
+from pages.const.fun import open_buku, buku_stock
 
 based_on = st.selectbox(
     'Cari dengan',
@@ -39,6 +39,7 @@ if based_on == 'Penulis':
                 st.write(f'- ID Buku = {x}')
                 st.write(f'- Penerbit = {data_buku[x]["penerbit"]}')
                 st.write(f'- Kuantitas = {data_buku[x]["kuantitas"]}')
+                st.write(f'- Stock = {buku_stock(x)}')
                 st.write(f'- Kategori = {data_buku[x]["kategori"]}')
                 st.write("***")
 

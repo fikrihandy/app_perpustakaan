@@ -9,8 +9,8 @@ dan [Streamlit](https://streamlit.io/#install) (tested v1.12.2).
 
 Jalankan melalui terminal `$ cd app_perpustakaan`, kemudian `$ streamlit run 🏠_Home.py`.
 
-Telah di-test pada Sistem Operasi:
+Telah di-test pada Sistem Operasi dan Browser:
 
-* macOS Monterey v12.5.1 (Chrome)
+* macOS Monterey v12.5.1 (Chrome & Safari)
 * Windows 11 (Microsoft Edge)
 * Linux Mint 21 Vanessa (Firefox)
