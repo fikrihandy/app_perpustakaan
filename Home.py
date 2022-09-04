@@ -2,7 +2,7 @@ from datetime import date, timedelta
 import streamlit as st
 import re
 
-from pages.const.fun import open_buku, open_siswa, open_peminjaman, save_peminjaman
+from pages.const.fun import open_buku, open_siswa, open_peminjaman, save_peminjaman, buku_stock
 
 st.header('Perpustakaan Ar-Rasyid Wonogiri')
 st.subheader('Pinjam Buku')
@@ -42,7 +42,10 @@ with st.form("form", True):
             try:
                 for i in data_peminjaman[id_siswa]["id"]:
                     for key in i:
-                        if key == id_buku:
+                        if buku_stock(id_buku) <= 0:
+                            siap_dipinjam = False
+                            pesan = "⚠️ Peminjaman gagal, stock buku tersedia habis."
+                        elif key == id_buku:
                             siap_dipinjam = False
                             pesan = "⚠️ Peminjaman gagal, siswa tersebut telah meminjam buku yang sama."
             except KeyError:
