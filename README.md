@@ -1,6 +1,6 @@
 ## App Perpustakaan
 
-Aplikasi untuk mencatat peminjaman buku perpustakaan. Bisa digunakan secara offline (tanpa koneksi internet).
+Aplikasi untuk mencatat peminjaman buku perpustakaan.
 
 ## Run this App
 
