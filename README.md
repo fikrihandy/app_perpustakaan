@@ -1,3 +1,7 @@
+## Belum Final
+
+Masih dalam tahap pengembangan!
+
 ## App Perpustakaan
 
 Aplikasi untuk mencatat peminjaman buku perpustakaan.
