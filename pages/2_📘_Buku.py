@@ -1,4 +1,3 @@
-import re
 import streamlit as st
 from pages.const.fun import open_buku, save_buku, open_kategori, open_peminjaman, buku_stock
 
@@ -88,7 +87,13 @@ with tab3:
         buku_list = ['0 - No data']
     buku_tuple = tuple(buku_list)
     id_buku_str = st.selectbox('ID Buku', buku_tuple)
-    id_buku_key = re.findall(r'\d+', id_buku_str)[0]
+    # id_buku_key = re.findall(r'\d+', id_buku_str)[0]
+    id_buku_key = ''
+    for character in id_buku_str:
+        if character != ' ':
+            id_buku_key = id_buku_key + character
+        else:
+            break
 
     if st.button('Hapus'):
         data_buku = open_buku()
