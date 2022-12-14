@@ -54,8 +54,8 @@ with tab2:
 
     if submit_tambah:
         data_buku = open_buku()
-        if id_buku in data_buku.keys():
-            st.warning("Gagal menambahkan, ID yang sama telah digunakan!", icon="❌")
+        if id_buku in data_buku.keys() or " " in id_buku:
+            st.warning("Gagal menambahkan, ID yang sama telah digunakan atau ID menggunakan spasi!", icon="❌")
         else:
             try:
                 kuantitas_int = int(kuantitas)
