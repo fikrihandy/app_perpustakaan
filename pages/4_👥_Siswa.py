@@ -57,7 +57,11 @@ with tab3:
     for i in data_siswa:
         no_identitas.append(i)
         nama.append(data_siswa[i]["nama"])
-    st.dataframe(pd.DataFrame({
-        'ID': no_identitas,
-        'Judul': nama
-    }))
+    st.dataframe(
+        pd.DataFrame(
+            {
+                # 'ID': no_identitas,
+                'Nama Siswa': nama
+            }, index=no_identitas
+        )
+    )

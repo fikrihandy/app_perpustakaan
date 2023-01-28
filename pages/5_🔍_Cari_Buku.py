@@ -31,16 +31,16 @@ pencarian.sort()
 options = st.multiselect(f'Cari berdasarkan {based_on}', pencarian)
 
 
-def show_cari_buku(filter):
+def show_cari_buku(search_by):
     st.write(f'- Judul = {data_buku[x]["judul"]}')
     st.write(f'- ID Buku = {x}')
-    if filter != 'penulis':
+    if search_by != 'penulis':
         st.write(f'- Penulis = {data_buku[x]["penulis"]}')
-    if filter != 'penerbit':
+    if search_by != 'penerbit':
         st.write(f'- Penerbit = {data_buku[x]["penerbit"]}')
     st.write(f'- Kuantitas = {data_buku[x]["kuantitas"]}')
     st.write(f'- Stock = {buku_stock(x)}')
-    if filter != 'kategori':
+    if search_by != 'kategori':
         st.write(f'- Kategori = {data_buku[x]["kategori"]}')
     st.write("***")
 

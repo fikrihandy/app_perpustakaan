@@ -26,7 +26,7 @@ path = ''
 # MAC / LINUX
 if my_os == "darwin" or my_os == "linux":
     path = db_directory_unix
-    if os.path.isdir(db_directory_unix) == False:
+    if not os.path.isdir(db_directory_unix):
         os.mkdir(os.path.join(os.path.expanduser("~/"), ".app_perpustakaan"))
         # MEMBUAT FILE DB
         for i in db_list:
@@ -35,20 +35,20 @@ if my_os == "darwin" or my_os == "linux":
         for j in db_list:
             # CEK FILE JIKA TIDAK ADA BUAT FILE DB
             is_available = os.path.isfile(f"{db_directory_unix}/{j}")
-            if is_available == False:
+            if not is_available:
                 kosongan_json_unix(j)
 
 # WINDOWS
 elif my_os == "win32":
     path = db_directory_win32
-    if os.path.isdir(db_directory_win32) == False:
+    if not os.path.isdir(db_directory_win32):
         os.mkdir(os.path.join(os.path.expanduser("~\\"), ".app_perpustakaan"))
         for i in db_list:
             kosongan_json_win32(i)
     else:
         for j in db_list:
             is_available = os.path.isfile(f"{db_directory_win32}\\{j}")
-            if is_available == False:
+            if not is_available:
                 kosongan_json_win32(j)
 
 
